@@ -16,7 +16,7 @@ class isAuthor
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->role == 'student') {
+        if (Auth::check() && Auth::user()->role == 'author') {
             return $next($request);
         } else {
             return redirect()->route('login');

@@ -15,5 +15,9 @@ class ArtikelController extends Controller
             'date' => 'required|string',
             'username' => 'required|string',
         ]);
+
+        if($validator->fails()){
+            return redirect()->back()->with('error', 'Gagal upload!!');
+        }
     }
 }
